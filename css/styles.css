@@ -200,15 +200,8 @@ ul {
 }
 .icon-phone {
   margin-right: 10px;
-
-  transition: var(--duration) var(--timing-function);
 }
-.icon-mailo {
-  display: flex;
-  align-items: center;
 
-  transition: var(--duration) var(--timing-function);
-}
 .icon-phone:hover,
 :focus {
   fill: var(--akcent-color);
@@ -270,6 +263,7 @@ ul {
 
   opacity: 1;
   transform: scale(1);
+
   transition: opacity var(--duration) var(--timing-function),
     visibility var(--duration) var(--timing-function),
     transform var(--duration) var(--timing-function);
@@ -277,7 +271,6 @@ ul {
 
 .backdrop.is-hidden {
   opacity: 0;
-  transform: scale(0);
   pointer-events: none;
   visibility: hidden;
 }
@@ -301,20 +294,31 @@ ul {
 }
 
 .is-hidden-modal {
-  display: block;
+  position: absolute;
+  display: flex;
   width: 30px;
   height: 30px;
-  margin-left: auto;
+  top: 8px;
+  right: 8px;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
 
-  background-image: url('..//images/close-black-18dp.svg');
-  background-repeat: no-repeat;
-  background-size: 18px 18px;
-  background-position: center;
   background-color: var(--primary-color);
   border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 
   transform: scale(1);
+}
+.icon-close-modal {
+  width: 18px;
+  height: 18px;
+  transition: var(--duration) var(--timing-function);
+}
+
+.modal .is-hidden-modal:hover,
+.modal .is-hidden-modal:focus {
+  fill: var(--akcent-color);
 }
 
 .hero-btm {
